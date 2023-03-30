@@ -171,9 +171,9 @@ privacy-policy:
 
 # constants to be replaced for
 constants:
-  greetings: 안녕하세요. 최은주의 블로그입니다.
-  welcome: Welcome lang
-  sample: 안녕하세요. 최은주입니다.
+  greetings: 데이터의 숨겨진 가치를 찾는 분석가
+  welcome: Welcome
+  sample: 
 
 # for contact form
 contact_form:
