@@ -2,13 +2,13 @@
 # Owner's Personal Information
 ###########################################################
 # This is your brand name
-brand: "Your Brand"
+brand: "Eunju Choe"
 
 # text below the brand name
 brand_sub_text: "$site_sample"
 
 # used for seo meta post author (if it's not defined in post)
-name: "Your Name"
+name: "Eunju Choe"
 
 # home page top header texts
 home:
@@ -48,12 +48,12 @@ meta_common_description: "Your meta description."
 # the order of the items will be shown as here.
 # comment to remove any contact item
 contacts:
-  #- github: ""
-  #- email: ""
-  #- linkedin: ""
+  - github: "eunju-choe"
+  - email: "eunju_choe@naver.com"
+  - linkedin: "eunju-choe-ab6852252"
   #- twitter: ""
   #- mastodon: ""
-  #- instagram: ""
+  - instagram: "jjaenzoo"
   #- youtube: ""
   #- facebook: ""
 # to add more, check the _data/const/contact.yml file
