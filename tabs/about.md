@@ -38,11 +38,6 @@ img: ":about.jpg"
 
 {%- comment -%} Please delete below and place your page content here {%- endcomment -%}
 
-{%- include util/auto-content-generator.liquid -%}
-{{ website_info_text_first }}
-
-{{ website_info_text_second }}
-
 # 데이터 안에 숨겨진 가치를 찾는 분석가 최은주입니다.
 문제 해결 과정에서 데이터를 기반으로 하는 의사결정을 중요하게 생각합니다. 데이터의 가치는 그것을 분석하고 활용하는 방법에 의해 결정된다고 생각합니다. 따라서 새로운 기술과 트렌드를 학습하여 데이터에 잠재된 가치를 발견하고 극대화하는 분석가로 성장하고자 항상 노력하고 있습니다.
 
