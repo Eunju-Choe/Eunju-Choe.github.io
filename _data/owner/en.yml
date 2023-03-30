@@ -17,9 +17,9 @@ home:
   # if commented, top header will be a single line
   top_header_line2: ""
 
-# about page sub title
+# about page sub title - about에 들어가는 부분
 about:
-  sub_title: "이거 뭐지 owner"
+  sub_title: "최은주 : eunju_choe@naver.com"
 
 # if you don't want to add copyright year, comment or leave it blank.
 # the year during which the claimed copyright for the work was first asserted.
