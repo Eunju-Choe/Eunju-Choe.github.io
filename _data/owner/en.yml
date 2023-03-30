@@ -5,7 +5,7 @@
 brand: "Eunju Choe"
 
 # text below the brand name
-brand_sub_text: "최은주"
+brand_sub_text: "eunju_choe@naver.com"
 
 # used for seo meta post author (if it's not defined in post)
 name: "Eunju Choe"
@@ -19,7 +19,7 @@ home:
 
 # about page sub title - about에 들어가는 부분
 about:
-  sub_title: "최은주 : eunju_choe@naver.com"
+  sub_title: "노션 : https://url.kr/fir7ma"
 
 # if you don't want to add copyright year, comment or leave it blank.
 # the year during which the claimed copyright for the work was first asserted.
@@ -42,7 +42,7 @@ creative_commons:
 # seo meta this is needed for each language
 # If meta_description is not defined in front matter, it's created from (post / page) content,
 # if it has no content, this will be used for page description. It is also used in manifest.json
-meta_common_description: "Your meta description."
+meta_common_description: "meta common은 뭐지  owner"
 
 # contact options (side nav bottom and about page)
 # the order of the items will be shown as here.

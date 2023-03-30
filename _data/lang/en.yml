@@ -173,7 +173,7 @@ privacy-policy:
 constants:
   greetings: 안녕하세요. 최은주의 블로그입니다.
   welcome: Welcome lang
-  sample: 이건 뭐지 lang
+  sample: 안녕하세요. 최은주입니다.
 
 # for contact form
 contact_form:
