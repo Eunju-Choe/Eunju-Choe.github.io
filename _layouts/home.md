@@ -38,17 +38,6 @@ layout: default
     {{ content }}
   </div>
 </div>
-<!-- hits 방문자수 -->
-<a href="https://hits.seeyoufarm.com">
-  <style>
-    .hits {
-      width: auto; height: auto;
-      max-width: 99px;
-      max-height: 20px;
-    }
-  </style>
-  <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Feunju-choe.github.io&count_bg=%238845D0&title_bg=%23000000&icon=iconify.svg&icon_color=%23FFFFFF&title=hits&edge_flat=false"/>
-</a>
 
 {%- if lng_pages.size > 0 and site.data.conf.others.home.new_posts %}
 <div class="multipurpose-container new-posts-container">
