@@ -6,7 +6,7 @@ tags: [Python, IBA, Machie Learning]
 img: ":20230329.png"
 date: 2023-03-28 22:50:00 +0900
 ---
-![png](https://eunju-choe.github.io/assets/img/posts/20230329.png){: width='50%'}{: .center}
+<p align="center"><img src="https://eunju-choe.github.io/assets/img/posts/20230329.png" width='50%'></p>
 
 2022년 5월 동아리에서는 신규 기수를 대상으로 [분류 모델 경진대회](https://cafe.naver.com/pnuiba/115)를 개최하였습니다. 동아리 회장으로서 대회를 기획하고 운영하였으며, 오늘은 대회 운영에 사용했던 코드를 정리하려고 합니다.\
 \

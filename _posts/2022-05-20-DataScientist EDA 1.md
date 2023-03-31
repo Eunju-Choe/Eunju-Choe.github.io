@@ -6,6 +6,7 @@ tags: [Analytics, Python, HR, Preprocessing, EDA, Visualization]
 img: ":20220520.jpg"
 date: 2022-05-20 12:32:10 +0900
 ---
+<p align="center"><img src="https://eunju-choe.github.io/assets/img/posts/20220520.jpg" width='50%'></p>
 
 데이터 과학자의 전직 여부 예측 전, 시각화를 포함한 EDA와 전처리 과정 첫 번째
 
