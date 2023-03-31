@@ -163,10 +163,6 @@ df.head()
 
 
 
-*df_processed_1.csv* 파일은 [Github][link]에서 다운받으실 수 있습니다.
-
-[link]: https://github.com/Eunju-Choe/Eunju-Choe/tree/main/blog/ds_classification
-
 # 1. 컬럼별 EDA와 전처리
 
 이전 게시글에서 사용했던 함수를 다시 한 번 정의하였습니다. 추가적으로 categorical 변수를 시각화하는 **plot_cat()** 함수를 정의하였습니다.
