@@ -59,17 +59,6 @@ layout: util/compress
         <a id="scroll-to-top" href="#main-wrapper" class="hover-effect"><i class="fa fa-angle-up"></i></a>
       </div>
       {%- endif -%}
-    <!-- hits 방문자수 -->
-    <a href="https://hits.seeyoufarm.com">
-      <style>
-        .hits {
-          width: auto; height: auto;
-          max-width: 99px;
-          max-height: 20px;
-        }
-      </style>
-      <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Feunju-choe.github.io&count_bg=%238845D0&title_bg=%23000000&icon=iconify.svg&icon_color=%23FFFFFF&title=hits&edge_flat=false"/>
-    </a>
 
     </div>
 
