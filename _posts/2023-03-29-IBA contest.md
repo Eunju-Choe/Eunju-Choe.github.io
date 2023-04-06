@@ -2,7 +2,7 @@
 title: 동아리 자체 공모전 기획 및 운영
 author: Eunju Choe
 category: Python
-tags: [Python, IBA, Machie Learning]
+tags: [Python, IBA, Machine Learning]
 img: ":20230329.png"
 date: 2023-03-28 22:50:00 +0900
 ---
