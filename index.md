@@ -44,4 +44,4 @@ img: ":home-heading.jpg"
 
 데이터에 잠재된 가치를 발견하고 그 가치를 극대화하는 분석가로 성장하기 위해 새로운 기술과 트렌드를 학습하고자 항상 노력하고 있습니다.
 
-저에 대해 궁금하신 분들은 [Notion](https://www.notion.so/eunju-choe/Eunju-Choe-f8ed54a5f76f47198f7fc171cbc00fdb?pvs=4)과 [Naver Blog](https://blog.naver.com/jjaenzoo)을 확인해주세요. 감사합니다😄
+저에 대해 궁금하신 분들은 [Notion](https://url.kr/3rwo5x)과 [Naver Blog](https://blog.naver.com/jjaenzoo)을 확인해주세요. 감사합니다 😄
