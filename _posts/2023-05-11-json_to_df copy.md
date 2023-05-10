@@ -1,0 +1,262 @@
+---
+title: 업로드 테스트
+author: Eunju Choe
+category: Python
+tags: [Python, json, openapi]
+img: ":20230511.png"
+date: 2023-05-11 04:59:00 +0900
+---
+<p align="center"><img src="https://eunju-choe.github.io/assets/img/posts/20230511.png" width='50%'></p>
+
+오늘은 json형식을 데이터프레임으로 쉽게 바꾸는 방법에 대해 고민한 과정에 대해 정리해보려고 합니다. 제가 사용한 던전앤파이터 API를 예시로 글을 한 번 작성해보도록 하겠습니다.
+
+
+```python
+from urllib.request import urlopen
+
+# API key 지정
+key = "API_KEY"
+```
+
+
+```python
+url = f'https://api.neople.co.kr/df/servers?apikey={key}'
+result = urlopen(url)
+result_html = result.read()
+result_html
+```
+
+
+
+
+    b'{"rows":[{"serverId":"cain","serverName":"\xec\xb9\xb4\xec\x9d\xb8"},{"serverId":"diregie","serverName":"\xeb\x94\x94\xeb\xa0\x88\xec\xa7\x80\xec\x97\x90"},{"serverId":"siroco","serverName":"\xec\x8b\x9c\xeb\xa1\x9c\xec\xbd\x94"},{"serverId":"prey","serverName":"\xed\x94\x84\xeb\xa0\x88\xec\x9d\xb4"},{"serverId":"casillas","serverName":"\xec\xb9\xb4\xec\x8b\x9c\xec\x95\xbc\xec\x8a\xa4"},{"serverId":"hilder","serverName":"\xed\x9e\x90\xeb\x8d\x94"},{"serverId":"anton","serverName":"\xec\x95\x88\xed\x86\xa4"},{"serverId":"bakal","serverName":"\xeb\xb0\x94\xec\xb9\xbc"}]}'
+
+
+
+먼저 urlopen() 함수를 사용하여 HTTP 요청을 보냅니다. 이 함수는 해당 URL에 대한 응답을 반환합니다. result 변수에 저장된 응답을 read() 메서드를 사용하여 바이트 형식으로 읽어들입니다.
+
+
+```python
+import json
+
+result_json = json.loads(result_html)
+print(json.dumps(result_json, indent=4))
+```
+
+    {
+        "rows": [
+            {
+                "serverId": "cain",
+                "serverName": "\uce74\uc778"
+            },
+            {
+                "serverId": "diregie",
+                "serverName": "\ub514\ub808\uc9c0\uc5d0"
+            },
+            {
+                "serverId": "siroco",
+                "serverName": "\uc2dc\ub85c\ucf54"
+            },
+            {
+                "serverId": "prey",
+                "serverName": "\ud504\ub808\uc774"
+            },
+            {
+                "serverId": "casillas",
+                "serverName": "\uce74\uc2dc\uc57c\uc2a4"
+            },
+            {
+                "serverId": "hilder",
+                "serverName": "\ud790\ub354"
+            },
+            {
+                "serverId": "anton",
+                "serverName": "\uc548\ud1a4"
+            },
+            {
+                "serverId": "bakal",
+                "serverName": "\ubc14\uce7c"
+            }
+        ]
+    }
+
+
+json.loads() 함수를 사용하여 result_html 변수에 저장된 바이트 형식의 응답을 JSON 형식으로 변환합니다. json.dumps() 함수를 사용하면 json을 보기 좋은 형식으로 출력할 수 있습니다. 이때, indent 매개변수를 사용하여 들여쓰기를 설정합니다.
+
+여기서, 저는 result_json의 serverId와 serverName을 데이터프레임으로 변환하고자 하였습니다. 반복문을 사용하는 방법이 있었지만, 조금 더 간단한 방법을 찾아보았습니다.
+
+## 첫 번째 시도 : map과 lambda 활용
+
+
+```python
+import pandas as pd
+
+server_ids = list(map(lambda item: item['serverId'], result_json['rows']))
+server_names = list(map(lambda item: item['serverName'], result_json['rows']))
+
+server_df = pd.DataFrame({'serverId' : server_ids,
+                         'serverName' : server_names})
+server_df
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>serverId</th>
+      <th>serverName</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>cain</td>
+      <td>카인</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>diregie</td>
+      <td>디레지에</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>siroco</td>
+      <td>시로코</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>prey</td>
+      <td>프레이</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>casillas</td>
+      <td>카시야스</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>hilder</td>
+      <td>힐더</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>anton</td>
+      <td>안톤</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>bakal</td>
+      <td>바칼</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+result_json에서 서버 ID와 서버 이름을 추출하기 위해 map() 함수와 람다 함수를 사용하였습니다. map과 lambda를 이용하여 각 요소에서 serverId와 serverName 키의 값을 추출하였습니다. 서버 ID와 서버 이름을 추출한 후 데이터프레임으로 변환하였습니다.
+
+# 두 번째 시도 : json_normalize()
+
+이 과정을 조금 더 간단하게 하는 방법이 없는지 ChatGPT에게 물어보았습니다. ChatGPT가 Pandas의 json_normalize() 함수를 사용하라고 조언하였습니다.
+
+
+```python
+df_server = pd.json_normalize(result_json['rows'])
+df_server
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>serverId</th>
+      <th>serverName</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>cain</td>
+      <td>카인</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>diregie</td>
+      <td>디레지에</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>siroco</td>
+      <td>시로코</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>prey</td>
+      <td>프레이</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>casillas</td>
+      <td>카시야스</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>hilder</td>
+      <td>힐더</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>anton</td>
+      <td>안톤</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>bakal</td>
+      <td>바칼</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+pd.json_normalize() 함수를 사용하여 JSON 데이터를 정규화(normalize)하여 데이터프레임으로 변환합니다. 정규화는 중첩된 JSON 구조를 평면화하여 표 형태의 데이터로 변환하는 작업을 수행합니다.
+
+---
+
+오늘은 json을 데이터프레임으로 변환하는 방법에 대해 알아보았습니다. GPT 덕분에 코딩 공부가 한결 쉬워졌습니다. json_normalize를 주로 사용하겠지만, map과 lambda를 사용하여 반복문을 대신하는 방법도 알아둘 필요가 있을 것 같습니다. 그럼 이만 오늘은 글 여기서 마치도록 하겠습니다. 읽어주셔서 감사합니다 :)
